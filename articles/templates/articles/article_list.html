@@ -1,0 +1,16 @@
+{% extends 'base_layout.html' %}
+{% block content %}
+<h1>Garpuz Team Gururla Sunar...</h1>
+<br><br><br>
+<div class="articles">
+  {% for article in articles %}
+    <div class="article">
+      <h2><a href="{% url 'articles:detail' slug=article.slug %}">{{article.title}}</a></h2>
+      <p>{{ article.snippet }}</p>
+      <p>{{ article.date }}</p>
+      <p class="author">added by {{ article.author }}</p>
+  </div>
+  <br><br/>
+  {% endfor %}
+</div>
+{% endblock %}
